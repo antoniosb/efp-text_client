@@ -7,9 +7,9 @@ defmodule TextClient.Summary do
   def display(game = %State{tally: tally}) do
     IO.puts([
       "\n",
-      "Word so far:\t #{tally.letters |> Enum.join(" ")}",
+      "Word so far:\t #{tally.letters |> Enum.join(" ")} 🤫",
       "\n",
-      "Guesses left:\t #{tally.turns_left}",
+      "Guesses left:\t #{tally.turns_left} 🤨",
       "\n"
     ])
 

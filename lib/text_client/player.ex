@@ -2,7 +2,7 @@ defmodule TextClient.Player do
   @moduledoc """
   The actual interactions between the game and the player.
   """
-  alias TextClient.{Prompter, State, Summary}
+  alias TextClient.{Mover, Prompter, State, Summary}
 
   def play(%State{tally: %{game_state: :won}}) do
     exit_with_message("You WON 😎!!!")
@@ -32,11 +32,9 @@ defmodule TextClient.Player do
     game
     |> Summary.display()
     |> Prompter.accept_move()
-    |> make_move()
+    |> Mover.make_move()
     |> play()
   end
-
-  defp make_move(game), do: game
 
   defp exit_with_message(message) do
     IO.puts(message)

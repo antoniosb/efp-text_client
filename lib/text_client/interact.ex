@@ -8,7 +8,13 @@ defmodule TextClient.Interact do
   def start do
     Hangman.new_game()
     |> setup_state()
-    |> Player.play()
+    |> Player.play(:human)
+  end
+
+  def bot do
+    Hangman.new_game()
+    |> setup_state()
+    |> Player.play(:bot)
   end
 
   defp setup_state(game) do

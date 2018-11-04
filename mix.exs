@@ -20,6 +20,7 @@ defmodule TextClient.MixProject do
   defp deps do
     [
       {:hangman, path: "../hangman"},
+      {:bot_client, path: "../bot_client"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false}
     ]
   end

@@ -5,6 +5,10 @@ defmodule TextClient.Prompter do
 
   alias TextClient.State
 
+  def auto_move(game = %State{}) do
+    Map.put(game, :guess, BotClient.Guesser.guess())
+  end
+
   def accept_move(game = %State{}) do
     IO.gets("Your guess: ")
     |> check_input(game)

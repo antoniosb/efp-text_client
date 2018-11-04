@@ -10,6 +10,8 @@ defmodule TextClient.Summary do
       "Word so far:\t #{tally.letters |> Enum.join(" ")}",
       "\n",
       "Guesses left:\t #{tally.turns_left}",
+      "\n",
+      "Letters used:\t #{tally.used |> Enum.join(" ")}",
       "\n"
     ])
 
